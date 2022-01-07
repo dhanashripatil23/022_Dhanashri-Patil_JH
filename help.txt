@@ -1,0 +1,44 @@
+
+//js file
+
+npm install mysql
+
+npm install bluebird
+
+npm install express
+
+npm install nodemon
+
+npm install cors
+
+"start": "nodemon main.js",
+----------------------------------------------------------------------------
+
+//user.js libraries
+
+const mysql=require("mysql");
+const Promise=require("bluebird");
+const Connection=require("mysql/lib/Connection");
+const { response } = require("express");
+const {append}=require("express/lib/response");
+Promise.promisifyAll(require("mysql/lib/Connection").prototype);
+
+---------------------------------------------------------------------------
+
+//main.js libraries
+
+const express = require("express");
+const req = require("express/lib/request");
+const app = express();
+app.use(express.json());
+const cors = require("cors");
+app.use(cors());
+
+-----------------------------------------------------------------------------
+
+//react app
+
+npx create-react-app my-app
+npm install react-bootstrap bootstrap@5.1.3
+import 'bootstrap/dist/css/bootstrap.min.css';
+npm install axios
